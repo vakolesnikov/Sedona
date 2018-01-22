@@ -13,17 +13,21 @@ body{
   background-color: #ffffff;
 }
 
-.main-navigation-list{
+.main-navigation{
   position: relative;
+}
+
+.main-navigation-list{
   display: flex;
-  justify-content: space-between;
   list-style: none;
   padding: 0 73px;
   margin: 0;
 }
 
-.main-navigation-list::after{
+.top-logo{
   position: absolute;
+  z-index: 10;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   content: "";
@@ -34,7 +38,17 @@ body{
 
 .main-navigation-item{
     padding: 15px 0;
+    margin-right: 150px;
 }
+
+.main-navigation-item:nth-child(2){
+  margin-right: auto;
+}
+
+.main-navigation-item:last-child{
+  margin-right: 0;
+}
+
 
 .main-navigation-link{
   color: #000000;
@@ -45,20 +59,59 @@ body{
   font-weight: 700;
 }
 
-.main-logo{
-  height: 773px;
-  background: url('img/main-background.png') no-repeat center;
+.main-banner{
+  position: relative;
+  height: 507px;
+  background: url('img/main-background-text1.png') no-repeat center top 75px,
+              url('img/main-background-text2.png') no-repeat center top 135px,
+              url('img/main-background-text3.png') no-repeat center top 145px,
+              url('img/main-background-text4.png') no-repeat center top 215px,
+              url('img/main-background-text5.png') no-repeat center top 345px,
+              url('img/main-background.png') no-repeat center top 0px;
+  }
+
+.main-banner::before{
+  content: "";
+  display: block;
+  width: 704px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: 58px solid transparent;
+  border-left: 352px solid #fff;
+  border-right: 352px solid #fff;
+
+}
+
+.main-banner::after{
+  content: "";
+  display: block;
+  width: 1200px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: 58px solid transparent;
+  border-left: 600px solid #fff;
+  border-right: 600px solid #fff;
+
 }
 
 .main-title{
   width: 475px;
   margin: 0 auto;
+  padding-top: 63px;
   font-size: 21px;
   font-weight: 700;
   line-height: 26px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .advantages-title{
+  padding-top: 32px;
+  padding-bottom: 48px;
   font-size: 14px;
   line-height: 26px;
   font-weight: 500;
@@ -143,6 +196,11 @@ body{
   text-transform: uppercase;
 }
 
+.hotel-order{
+  position: relative;
+  z-index: 3
+}
+
 .hotel-order-question{
   display: block;
   padding-top: 55px;
@@ -161,9 +219,9 @@ body{
 }
 
 .hotel-order-button{
+  display: block;
   width: 576px;
   margin: 0 auto;
-  margin-bottom: 55px;
   padding: 30px 0;
   background-color: #766357;
   color: #fff;
@@ -172,12 +230,38 @@ body{
   line-height: 26px;
   font-weight: 700;
   text-transform: uppercase;
+  outline: none;
+  z-index: 3
 }
 
 .hotel-order-form{
+  display: none;
   width: 576px;
-  margin: 0 auto;
-  padding: 0 60px;
+  padding: 55px 60px;
+  background-color: #fff;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left:-288px;
+  animation-name: animation-form;
+  animation-duration: 3s;
+}
+
+@keyframes animation-form {
+  0%{
+    transform: translateY(-100%);
+    z-index: 0;
+}
+
+  100%{
+    transform: translateY(0px);
+    z-index: 1;
+  }
+
+}
+
+.form-show{
+  display: block;
 }
 
 .hotel-order-form label{
@@ -223,14 +307,12 @@ body{
 }
 
 .main-maps{
-  position: relative;
   height: 593px;
+  margin-bottom: -120px;
   background: url('img/map.png');
 }
 
 .main-footer{
-  position: absolute;
-  bottom: 0;
   display: flex;
   height: 120px;
   padding: 37px 0;
@@ -266,8 +348,4 @@ body{
 
 .social-box-item:nth-child(3){
   background: #81b3d2 url('img/youtube-icon.png') no-repeat center;
-}
-
-.copy{
-  background: url('img/logo_name.png')  no-repeat center right 100px;
 }

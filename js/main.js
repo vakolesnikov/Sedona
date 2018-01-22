@@ -1,12 +1,14 @@
-var mbtn = document.querySelector(".maps-button");
-var enter = document.querySelector(".enter");
-var exit = document.querySelector(".exit");
+var mbtn = document.querySelector(".hotel-order-button");
+var enter = document.querySelector(".hotel-order-form");
 mbtn.addEventListener("click", function(evt){
 evt.preventDefault();
-enter.classList.add("enter-visible");
-});
+  if (enter.classList.contains("form-show")){
+    enter.classList.remove("form-show");
 
-exit.addEventListener("click", function(evt){
-evt.preventDefault();
-enter.classList.remove("enter-visible");
+  }
+  else {
+    enter.classList.add("form-show");
+
+  }
+
 });
