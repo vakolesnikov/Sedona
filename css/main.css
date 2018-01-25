@@ -59,6 +59,22 @@ body{
   font-weight: 700;
 }
 
+.main-navigation-link:hover{
+  color: #81b3d2;
+  transition: 0.6s;
+}
+
+.main-navigation-link:active{
+  color: #b2b2b2;
+  transition: 0.6s;
+}
+
+.navigation-link-active{
+  color: #766357;
+}
+
+
+
 .main-banner{
   position: relative;
   height: 507px;
@@ -95,6 +111,10 @@ body{
   border-top: 58px solid transparent;
   border-left: 600px solid #fff;
   border-right: 600px solid #fff;
+
+}
+
+main{
 
 }
 
@@ -231,8 +251,20 @@ body{
   font-weight: 700;
   text-transform: uppercase;
   outline: none;
-  z-index: 3
+  border: 0;
 }
+
+.hotel-order-button:hover{
+  background-color: #604e43;
+
+}
+
+.hotel-order-button:active{
+  background-color: #503e33;
+  color: #857871;
+}
+
+
 
 .hotel-order-form{
   display: none;
@@ -244,18 +276,16 @@ body{
   left: 50%;
   margin-left:-288px;
   animation-name: animation-form;
-  animation-duration: 3s;
+  animation-duration: 1s;
 }
 
 @keyframes animation-form {
   0%{
-    transform: translateY(-100%);
-    z-index: 0;
+    opacity: 0;
 }
 
   100%{
-    transform: translateY(0px);
-    z-index: 1;
+    opacity: 1;
   }
 
 }
@@ -264,8 +294,9 @@ body{
   display: block;
 }
 
-.hotel-order-form label{
+.hotel-order-form span{
   font-size: 14px;
+  line-height: 26px;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -277,19 +308,90 @@ body{
   border: 0;
   margin-bottom: 30px;
   background: #f2f2f2 url('img/calendar.png') no-repeat center right 9px;
+  outline: none;
 }
 
-.input-label{
-  display: block;
+.hotel-order-form input[name=arrival_date]:hover,
+.hotel-order-form input[name=date_of_departure]:hover{
+  background: #ebebeb url('img/calendar-hover.png') no-repeat center right 9px;
 }
+
+.hotel-order-form input[name=arrival_date]:focus,
+.hotel-order-form input[name=date_of_departure]:focus{
+  background: #fff url('img/calendar-active.png') no-repeat center right 9px;
+  border: 2px solid #e5e5e5;
+}
+
+
+
+.order-form-item{
+  display: flex;
+}
+
+.order-form-item span{
+  margin-right: auto;
+}
+
+.babies{
+  margin-left: 40px;
+}
+
 
 .input-number{
+  display: flex;
   width: 115px;
   height: 38px;
   background-color: #f2f2f2;
   border: 0;
   margin-bottom: 54px;
 }
+
+.input-number-item{
+  position: relative;
+  width: 33.333333%;
+  height: 100%;
+  background-color: #f2f2f2;
+  border: 0;
+  text-align: center;
+  outline: none;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 700;
+
+}
+
+.number-item-line:hover::after, .number-item-line_v:hover::before{
+  border-color: #000;
+}
+
+.number-item-line:active::after, .number-item-line_v:active::before{
+  border-color: #81b3d2;
+}
+
+
+
+.number-item-line::after{
+  content: "";
+  display: block;
+  width: 13px;
+  border-bottom: 3px solid #a9a9a9;
+  margin: 0 auto;
+  position: absolute;
+  left: 13px;
+  top: 18px;
+}
+
+.number-item-line_v::before{
+  content: "";
+  display: block;
+  height: 13px;
+  border-right: 3px solid #a9a9a9;
+  margin: 0 auto;
+  position: absolute;
+  left: 18px;
+  top: 13px;
+}
+
 
 .hotel-order-form input[type=submit]{
   display: block;
@@ -298,12 +400,21 @@ body{
   color: #fff;
   background-color: #81b3d2;
   border: 0;
+  outline: none;
   text-align: center;
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
   text-transform: uppercase;
+}
 
+.hotel-order-form input[type=submit]:hover{
+  background-color: #669ec0;
+}
+
+.hotel-order-form input[type=submit]:active{
+  background-color: #5496bd;
+  color: #88b6d1;
 }
 
 .main-maps{
@@ -348,4 +459,20 @@ body{
 
 .social-box-item:nth-child(3){
   background: #81b3d2 url('img/youtube-icon.png') no-repeat center;
+}
+
+.social-box-item:hover{
+  background-color: #669ec0;
+}
+
+.social-box-item:nth-child(1):active{
+  background: #5496bd url('img/t-icon-opacity.png') no-repeat center;
+}
+
+.social-box-item:nth-child(2):active{
+  background: #5496bd url('img/fb-icon-opacity.png') no-repeat center;
+}
+
+.social-box-item:nth-child(3):active{
+  background: #5496bd url('img/youtube-icon-opacity.png') no-repeat center;
 }

@@ -149,22 +149,50 @@
             Поиск гостиницы в Седоне
           </button>
           <form class="hotel-order-form">
-            <label class="input-label">
-              Дата заезда:
-              <input type="text" name="arrival_date" value="">
-            </label>
-            <label class="input-label">
-              Дата выезда:
-              <input type="text" name="date_of_departure" value="">
-            </label>
-            <label>
-              Взрослые:
-              <input type="text" name="" value="" class="input-number">
-            </label>
-            <label>
-              Дети:
-              <input type="text" name="" value="" class="input-number">
-            </label>
+            <div class="order-form-item">
+              <span class="arrival_date">
+                Дата заезда:
+              </span>
+                <input type="text" name="arrival_date" value="" id="arrival_date">
+
+            </div>
+            <div class="order-form-item">
+              <span class="date_of_departure">
+                Дата выезда:
+              </span>
+                <input type="text" name="date_of_departure" value="">
+
+            </div>
+            <div class="order-form-item">
+              <span class="adults">
+                Взрослые:
+              </span>
+              <div class="input-number">
+                <div class="input-number-item number-item-line">
+
+                </div>
+                <input type="text" name="" value="" class="input-number-item">
+                <div class="input-number-item number-item-line  number-item-line_v">
+
+                </div>
+              </div>
+
+              <span class="babies">
+                Дети:
+              </span>
+              <div class="input-number">
+                <div class="input-number-item number-item-line">
+
+                </div>
+                <input type="text" name="" value="" class="input-number-item">
+                <div class="input-number-item number-item-line  number-item-line_v">
+
+                </div>
+              </div>
+            </div>
+
+
+
 
               <input type="submit" name="" value="Найти">
           </form>
