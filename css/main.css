@@ -83,7 +83,7 @@ body{
               url('img/main-background-text3.png') no-repeat center top 145px,
               url('img/main-background-text4.png') no-repeat center top 215px,
               url('img/main-background-text5.png') no-repeat center top 345px,
-              url('img/main-background.png') no-repeat center top 0px;
+              url('img/main-background.png') no-repeat center top -56px;
   }
 
 .main-banner::before{
@@ -130,8 +130,9 @@ main{
 }
 
 .advantages-title{
-  padding-top: 32px;
-  padding-bottom: 48px;
+  padding-top: 25px;
+  padding-bottom: 51px;
+  margin: 0;
   font-size: 14px;
   line-height: 26px;
   font-weight: 500;
@@ -149,7 +150,15 @@ main{
   width: 400px;
   height: 255px;
   padding: 0 50px;
+  padding-top: 47px;
 }
+
+.advantages-item:nth-child(3),
+.advantages-item:nth-child(4),
+.advantages-item:nth-child(5){
+  height: 330px;
+}
+
 
 .advantages-item:nth-child(1), .advantages-item:nth-child(7){
   background-color: #81b3d2;
@@ -171,8 +180,9 @@ main{
 .advantages-item:nth-child(4) .advantages-item-title,
 .advantages-item:nth-child(5) .advantages-item-title
 {
-  margin-top: 160px;
+  margin-top: 115px;
 }
+
 
 .advantages-item:nth-child(4){
   background: url('img/icon-3.png') no-repeat center top 60px;
@@ -196,7 +206,10 @@ main{
 }
 
 .advantages-item-title{
+  margin: 0;
+  padding-bottom: 26px;
   font-size: 21px;
+  line-height: 21px;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
@@ -214,6 +227,15 @@ main{
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
+  margin: 0;
+  padding-top: 26px;
+}
+
+.advantages-item:nth-child(3) .advantages-item-text,
+.advantages-item:nth-child(4) .advantages-item-text,
+.advantages-item:nth-child(5) .advantages-item-text
+{
+  padding-top: 0px;
 }
 
 .hotel-order{
@@ -223,7 +245,7 @@ main{
 
 .hotel-order-question{
   display: block;
-  padding-top: 55px;
+  padding-top: 53px;
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
@@ -233,14 +255,18 @@ main{
 
 .hotel-order-text{
   margin: 0;
+  width: 100%;
+  font-size: 14px;
+  line-height: 24px;
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 50px;
+  padding-top: 24px;
+  padding-bottom: 47px;
+  text-transform: uppercase;
 }
 
 .hotel-order-button{
   display: block;
-  width: 576px;
+  width: 568px;
   margin: 0 auto;
   padding: 30px 0;
   background-color: #766357;
@@ -252,6 +278,7 @@ main{
   text-transform: uppercase;
   outline: none;
   border: 0;
+  transition: 0.6s;
 }
 
 .hotel-order-button:hover{
@@ -268,13 +295,13 @@ main{
 
 .hotel-order-form{
   display: none;
-  width: 576px;
+  width: 568px;
   padding: 55px 60px;
   background-color: #fff;
   position: absolute;
   top: 100%;
   left: 50%;
-  margin-left:-288px;
+  margin-left:-284px;
   animation-name: animation-form;
   animation-duration: 1s;
 }
@@ -295,6 +322,7 @@ main{
 }
 
 .hotel-order-form span{
+  padding-top: 5px;
   font-size: 14px;
   line-height: 26px;
   font-weight: 700;
@@ -309,6 +337,7 @@ main{
   margin-bottom: 30px;
   background: #f2f2f2 url('img/calendar.png') no-repeat center right 9px;
   outline: none;
+  transition: 0.6s;
 }
 
 .hotel-order-form input[name=arrival_date]:hover,
@@ -328,12 +357,13 @@ main{
   display: flex;
 }
 
-.order-form-item span{
+.arrival_date, .date_of_departure, .adults, .babies{
   margin-right: auto;
 }
 
 .babies{
-  margin-left: 40px;
+  margin-left: 52px;
+  margin-right: 25px;
 }
 
 
@@ -373,23 +403,25 @@ main{
 .number-item-line::after{
   content: "";
   display: block;
-  width: 13px;
+  width: 11px;
   border-bottom: 3px solid #a9a9a9;
   margin: 0 auto;
   position: absolute;
-  left: 13px;
-  top: 18px;
+  left: 14px;
+  top: 17px;
+  transition: 0.6s;
 }
 
 .number-item-line_v::before{
   content: "";
   display: block;
-  height: 13px;
+  height: 11px;
   border-right: 3px solid #a9a9a9;
   margin: 0 auto;
   position: absolute;
   left: 18px;
   top: 13px;
+  transition: 0.6s;
 }
 
 
@@ -406,10 +438,12 @@ main{
   line-height: 26px;
   font-weight: 700;
   text-transform: uppercase;
+  transition: 0.6s;
 }
 
 .hotel-order-form input[type=submit]:hover{
   background-color: #669ec0;
+
 }
 
 .hotel-order-form input[type=submit]:active{
@@ -439,14 +473,45 @@ main{
   text-align: center;
 }
 
+.footer-tag{
+  padding-top: 9px;
+  color: #000;
+  text-decoration: none;
+
+}
+
+.footer-tag-mod{
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 500;
+    text-align: left;
+    color: #000;
+    text-decoration: none;
+    padding-top: 9px;
+    padding-left: 102px;
+    background: url('img/logo_name.png') no-repeat top 2px right 101px;;
+}
+
+.footer-tag-mod:hover{
+  background-image: url('img/logo_name-hover.png');
+  transition: 0.6s;
+}
+
+.footer-tag-mod:active{
+  background-image: url('img/logo_name-active.png');
+  transition: 0.6s;
+}
+
+
+
 .social-box{
   text-align: center;
 }
 
 .social-box-item{
   display: inline-block;
-  width: 45px;
-  height: 45px;
+  width: 46px;
+  height: 48px;
 }
 
 .social-box-item:nth-child(1){
@@ -463,10 +528,12 @@ main{
 
 .social-box-item:hover{
   background-color: #669ec0;
+  transition: 0.6s;
 }
 
 .social-box-item:nth-child(1):active{
   background: #5496bd url('img/t-icon-opacity.png') no-repeat center;
+
 }
 
 .social-box-item:nth-child(2):active{
